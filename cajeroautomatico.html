@@ -1,41 +1,63 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cajero Automático</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cajero Automatico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="csscajero.css">
 </head>
 
 <body>
     <header>
-        <h1>Cajero Automático</h1>
+        <div id="form">
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                <input id="usser" type="email" class="form-control" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                <input id="contraseña" type="password" class="form-control">
+            </div>
+            <button id="boton" type="button" class="btn btn-outline-warning">Ingresar</button>
+        </div>
+        <nav id="navbar" class="navbar navbar-expand-lg bg-body-tertiary" style="display: none;">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
     </header>
     <main>
-        <div id="loginsection" class="section">
-            <label for="cuenta">Tu cuenta</label>
-            <select id="cuenta">
-                <option value="0">Noah</option>
-                <option value="1">Lina</option>
-                <option value="2">Bastian</option>
-            </select>
-            <div class="contraseñas">
-                <label for="password">Contraseña</label>
-                <input type="password" id="password" placeholder="Escribe tu contraseña">
+        <section id="imglc" style="display: none;">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        </section>
+
+        <div id="letterus" class="card" style="width: 18rem; display: none;">
+            <div class="card-body">
+                <h5 id="alias" class="card-title"></h5>
+                <p id="saldoActual" class="card-text"></p>
+                <p id="saldo" class="card-text"></p>
+                <p id="ingresa" class="card-text"></p>
+                <div class="input-group mb-3">
+                    <span class="input-group-text">$</span>
+                    <input id="capital" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                </div>
+                <button id="buttonA" type="button" class="btn btn-outline-success">Depositar</button>
+                <button id="buttonB" type="button" class="btn btn-outline-danger">Retirar</button>
+                <button id="nuevoSaldo" type="button" class="btn btn-outline-info">Consultar Saldo</button>
             </div>
-            <button id="loginbutton">Entrar</button>
-            <div id="mensaje" class="error" style="display: none;"></div>
         </div>
-        <div id="saldo" class="section" style="display: none;"></div>
-        <form id="montoform" class="section" style="display: none;">
-            <label for="monto">Monto que deseas ingresar</label>
-            <input type="number" id="monto" placeholder="ingreso montos" step="0.01" min="0">
-            <button type="button" id="botonconfirmadormonto">Aceptar</button>
-        </form>
     </main>
     <script src="cajerojs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </body>
-
 
 </html>

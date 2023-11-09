@@ -1,39 +1,38 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: black;
+    background-color: rgb(97, 38, 38);
+    initial-letter: Arial;
+
 }
-header {
-    max-width: 400px;
+
+#form {
+    width: 40%;
     margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-    border-radius: 5px;
-    color: #fdfdfd;
+    margin-top: 10%;
+    color: aliceblue;
+    padding: 1em;
+    border: 2.7px solid #d4abab;
 }
 
-main {
-    max-width: 400px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    color: #f2e3ce;
+#letterus {
+    width: 100px;
+    margin-left: 38%;
+    margin-top: 5%;
+    padding: 50px;
+    font-family: cursive;
+    background-color: rgb(39, 26, 26);
+    color: rgb(255, 213, 213);
 }
 
-.section {
-    margin: 12px;
+#nuevoSaldo {
+    margin: 2px;
 }
 
-.contraseñas {
-    margin: 1em;
+#buttonA {
+    margin: 5px;
+
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #a63f5a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer
+#buttonB {
+    margin: 5px;
+
 }

@@ -1,32 +1,76 @@
-function withdrawMoney() {
-    var retiro = parseInt(document.getElementById("retiro").value);
-    var messageElement = document.getElementById("message");
+document.getElementById("boton").addEventListener("click", function () {
+  let alias = document.getElementById("usser").value
+  let pass = document.getElementById("contraseña").value
 
-    if (isNaN(retiro) || retiro <= 0) {
-        messageElement.textContent = "Ingrese una cantidad válida.";
-    } else {
-        var denominations = [100, 50, 20, 10, 5, 1];
-        var result = {};
+  validador(alias, pass)
+})
+var usuario = [
+  { nombre: "Noah", password: "N01", dinero: 370 },
+  { nombre: "Lina", password: "L02", dinero: 860 },
+  { nombre: "Bastian", password: "B03", dinero: 516 },
+  { nombre: "Mary", password: "M04", dinero: 120 },
+  { nombre: "Danae", password: "D05", dinero: 465 },
+  { nombre: "Gabriela", password: "G06", dinero: 696 },
+  { nombre: "Javiera", password: "J07", dinero: 705 },
+  { nombre: "Alejo", password: "A08", dinero: 213 },
+  { nombre: "Cristian", password: "C09", dinero: 989 },
+  { nombre: "David", password: "P10", dinero: 11 }
+]
+let usuarioSelecionado
+let saldousario = document.getElementById("saldoActual")
+function validador(nombre, password) {
+  for (let index = 0; index < usuario.length; index++) {
+    if (nombre === usuario[index].nombre && password === usuario[index].password) {
+      alert("Bienvenido")
+      usuarioSelecionado = usuario[index]
+      document.getElementById("alias").textContent = usuarioSelecionado.nombre
+      document.getElementById("form").style.display = "none"
+      document.getElementById("navbar").style.display = "block"
+      document.getElementById("imglc").style.display = "block"
+      document.getElementById("letterus").style.display = "block"
 
-        for (var i = 0; i < denominations.length; i++) {
-            var denomination = denominations[i];
-            var count = Math.floor(retiro / denomination);
-            if (count > 0) {
-                result[denomination] = count;
-                retiro = retiro % denomination;
-            }
-        }
-
-        if (retiro === 0) {
-            var message = "Retire su dinero:<br>";
-            for (var key in result) {
-                if (result.hasOwnProperty(key)) {
-                    message += key + "€: " + result[key] + "<br>";
-                }
-            }
-            messageElement.innerHTML = message;
-        } else {
-            messageElement.textContent = "No se puede dispensar la cantidad solicitada.";
-        }
+    } else if (nombre === "" || password === "") {
+      alert("Rellena los campos vacios")
+    } else if (usuario[index].nombre === nombre) {
+      alert("Uno de los campos es incorrecto")
     }
+  }
+}
+
+
+document.getElementById("buttonA").addEventListener("click", function () {
+  let aumentoCapital = document.getElementById("capital").value
+  aumentoC(aumentoCapital)
+})
+function aumentoC(capital) {
+  if (usuarioSelecionado.dinero + Number(capital) > 990) {
+    alert("No puedes depositar esta cantidad")
+  } else {
+    usuarioSelecionado.dinero += Number(capital)
+    document.getElementById("ingresa").textContent = "Depositaste  $" + capital
+    document.getElementById("saldoActual").textContent = usuarioSelecionado.dinero
+  }
+
+}
+
+document.getElementById("buttonB").addEventListener("click", function () {
+  let disminuyeCapital = document.getElementById("capital").value
+  bajaCapital(disminuyeCapital)
+})
+function bajaCapital(capital) {
+  if (usuarioSelecionado.dinero - Number(capital) < 10) {
+    alert("No puedes retirar esta cantidad")
+  } else {
+    usuarioSelecionado.dinero -= Number(capital)
+    document.getElementById("ingresa").textContent = "Haz retirado  $" + capital
+    document.getElementById("saldoActual").textContent = usuarioSelecionado.dinero
+  }
+
+}
+document.getElementById("nuevoSaldo").addEventListener("click", function () {
+
+  dineroActualizado()
+})
+function dineroActualizado() {
+  document.getElementById("saldo").textContent = "Tu saldo es de : " + usuarioSelecionado.dinero
 }
