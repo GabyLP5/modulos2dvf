@@ -18,6 +18,7 @@ var usuario = [
 ]
 let usuarioSelecionado
 let saldousario = document.getElementById("saldoActual")
+
 function validador(nombre, password) {
   for (let index = 0; index < usuario.length; index++) {
     if (nombre === usuario[index].nombre && password === usuario[index].password) {
@@ -43,7 +44,7 @@ document.getElementById("buttonA").addEventListener("click", function () {
 })
 function aumentoC(capital) {
   if (usuarioSelecionado.dinero + Number(capital) > 990) {
-    alert("No puedes depositar esta cantidad")
+    alert("El deposito excede el limite de saldo permitido")
   } else {
     usuarioSelecionado.dinero += Number(capital)
     document.getElementById("ingresa").textContent = "Depositaste  $" + capital
@@ -57,7 +58,7 @@ document.getElementById("buttonB").addEventListener("click", function () {
 })
 function bajaCapital(capital) {
   if (usuarioSelecionado.dinero - Number(capital) < 10) {
-    alert("No puedes retirar esta cantidad")
+    alert("El retiro excede el minimo de saldo permitido")
   } else {
     usuarioSelecionado.dinero -= Number(capital)
     document.getElementById("ingresa").textContent = "Haz retirado  $" + capital
