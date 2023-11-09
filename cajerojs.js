@@ -28,15 +28,14 @@ function validador(nombre, password) {
       document.getElementById("navbar").style.display = "block"
       document.getElementById("imglc").style.display = "block"
       document.getElementById("letterus").style.display = "block"
-
-    } else if (nombre === "" || password === "") {
-      alert("Rellena los campos vacios")
     } else if (usuario[index].nombre === nombre) {
-      alert("Uno de los campos es incorrecto")
+      alert("Uno de los campos es incorrecto, intente denuevo")
+    }
+    else if (nombre === "" && password === "") {
+      alert("Cuenta inexistente o formulario vacio, presione aceptar diez veces para intentarlo nuevamente 😅")
     }
   }
 }
-
 
 document.getElementById("buttonA").addEventListener("click", function () {
   let aumentoCapital = document.getElementById("capital").value
@@ -50,7 +49,6 @@ function aumentoC(capital) {
     document.getElementById("ingresa").textContent = "Depositaste  $" + capital
     document.getElementById("saldoActual").textContent = usuarioSelecionado.dinero
   }
-
 }
 
 document.getElementById("buttonB").addEventListener("click", function () {
