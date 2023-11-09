@@ -4,20 +4,25 @@ body {
 
 }
 
+header {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin-top: 5%;
+}
+
 #form {
     width: 40%;
     margin: 0 auto;
-    margin-top: 10%;
+    margin-top: 3%;
     color: aliceblue;
     padding: 1em;
     border: 2.7px solid #d4abab;
 }
 
 #letterus {
-    width: 100px;
     margin-left: 38%;
-    margin-top: 5%;
-    padding: 50px;
+    margin-top: 1%;
+    padding: 40px;
     font-family: cursive;
     background-color: rgb(39, 26, 26);
     color: rgb(255, 213, 213);
